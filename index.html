@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Ikigai Emploi - LS4YOU</title>
+    <style>
+        :root {
+            --color-love: #ffcccc;
+            --color-good: #cce5ff;
+            --color-need: #d4edda;
+            --color-paid: #fff3cd;
+            --primary: #2c3e50;
+            --accent: #d9534f;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--primary); background: #f4f7f6; padding: 20px; }
+        .container { max-width: 950px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--accent); margin-bottom: 5px; text-transform: uppercase; }
+        p.subtitle { text-align: center; font-style: italic; margin-bottom: 30px; color: #666; }
+        
+        .ikigai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+        .block { padding: 20px; border-radius: 8px; border: 1px solid #ddd; display: flex; flex-direction: column; }
+        .block h3 { margin-top: 0; font-size: 1.1em; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 8px; }
+        .love { background: var(--color-love); }
+        .good { background: var(--color-good); }
+        .need { background: var(--color-need); }
+        .paid { background: var(--color-paid); }
+        
+        textarea { width: 100%; height: 110px; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; padding: 10px; resize: none; box-sizing: border-box; font-family: inherit; margin-top: 10px; }
+        
+        .action-plan { background: #f9f9f9; border: 2px dashed var(--primary); padding: 20px; border-radius: 8px; margin-top: 20px; }
+        .action-plan h3 { color: var(--primary); margin-top: 0; }
+        .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+        .footer-info { background: #eceff1; padding: 15px; border-radius: 8px; text-align: center; font-size: 0.9em; margin-top: 25px; border: 1px solid #cfd8dc; }
+        .btn-export { display: block; width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin-top: 20px; font-weight: bold; }
+        .btn-export:hover { background: #1a252f; }
+
+        @media print {
+            .btn-export { display: none; }
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; border: none; width: 100%; max-width: 100%; }
+            textarea { border: 1px solid #eee; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MON IKIGAI EMPLOI</h1>
+    <p class="subtitle">Exercice LS4YOU : Vers ma "Destination Moi-même" [cite: 1, 13]</p>
+
+    <div class="ikigai-grid">
+        <div class="block love">
+            <h3>❤️ Ce que j'aime (Sens)</h3>
+            <small>Mon unicité [cite: 15], ce qui me définit [cite: 16] et mes objectifs personnels[cite: 18].</small>
+            <textarea placeholder="Quelles sont les activités qui me passionnent et les valeurs qui me guident ?"></textarea>
+        </div>
+
+        <div class="block good">
+            <h3>🛠️ Ce dans quoi je suis bon (Talents)</h3>
+            <small>Ma personnalité [cite: 17], mon potentiel [cite: 10] et ma capacité à convaincre[cite: 21].</small>
+            <textarea placeholder="Quelles sont mes forces de résilience [cite: 4] et mes compétences clés ?"></textarea>
+        </div>
+
+        <div class="block need">
+            <h3>💼 Ce dont le monde a besoin</h3>
+            <small>Mes opportunités [cite: 12] et ce qui me rend utile aux autres[cite: 3].</small>
+            <textarea placeholder="Quels secteurs recrutent et quels problèmes concrets puis-je résoudre ?"></textarea>
+        </div>
+
+        <div class="block paid">
+            <h3>🌱 Ce pour quoi je suis payé</h3>
+            <small>Mon salaire cible [cite: 8] et les qualités rémunérées[cite: 6].</small>
+            <textarea placeholder="Pour quelles compétences précises un employeur est-il prêt à me recruter ?"></textarea>
+        </div>
+    </div>
+
+    <div class="action-plan">
+        <h3>🚀 Mon Plan d'Action & Prochaines Étapes</h3>
+        <div class="action-grid">
+            <div>
+                <label><strong>Actions prioritaires :</strong></label>
+                <textarea style="height: 80px;" placeholder="1. Contacter... 2. Relancer... 3. Finaliser..."></textarea>
+            </div>
+            <div>
+                <label><strong>Ressources & Équilibre :</strong></label>
+                <textarea style="height: 80px;" placeholder="Comment vais-je préserver mon bien-être et mon énergie?"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-info">
+        <strong>Socle de réussite :</strong> Équilibre de vie [cite: 5], gestion du stress [cite: 4] et ressources physiques[cite: 7].
+    </div>
+
+    <button class="btn-export" onclick="window.print()">Exporter mon Ikigai en PDF</button>
+</div>
+
+</body>
+</html>
