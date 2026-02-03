@@ -3,156 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Ikigai Emploi - LS4YOU</title>
+    <title>Ikigai Emploi - LS4YOU</title>
     <style>
         :root {
-            --red: #e74c3c;
-            --blue: #3498db;
-            --green: #2ecc71;
-            --yellow: #f1c40f;
-            --dark: #2c3e50;
+            --red: #ff4d4d; --blue: #3498db; --green: #2ecc71; --yellow: #f1c40f; --dark: #2c3e50;
         }
-        body { font-family: 'Arial', sans-serif; background: #fdfdfd; display: flex; flex-direction: column; align-items: center; padding: 20px; }
-        .header { text-align: center; margin-bottom: 20px; }
-        h1 { margin: 0; color: var(--dark); font-size: 1.8em; }
+        body { font-family: 'Helvetica', sans-serif; background: #f9f9f9; display: flex; flex-direction: column; align-items: center; padding: 10px; }
+        .header { text-align: center; margin-bottom: 10px; }
+        h1 { margin: 0; color: var(--dark); font-size: 1.5em; text-transform: uppercase; }
         
-        /* Conteneur principal du puzzle */
         .ikigai-container {
             position: relative;
-            width: 800px;
-            height: 750px;
-            margin-top: 20px;
+            width: 750px;
+            height: 700px;
+            margin-top: 10px;
         }
 
-        /* Style commun aux cercles */
         .circle {
-            position: absolute;
-            width: 380px;
-            height: 380px;
-            border-radius: 50%;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-sizing: border-box;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute; width: 350px; height: 350px; border-radius: 50%;
+            padding: 30px; display: flex; flex-direction: column; align-items: center;
+            justify-content: center; text-align: center; box-sizing: border-box;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        /* Positionnement fidèle au PDF */
-        .top { top: 0; left: 210px; background: rgba(231, 76, 60, 0.2); border: 2px solid var(--red); }
-        .left { top: 180px; left: 0; background: rgba(52, 152, 219, 0.2); border: 2px solid var(--blue); }
-        .right { top: 180px; left: 420px; background: rgba(46, 204, 113, 0.2); border: 2px solid var(--green); }
-        .bottom { top: 370px; left: 210px; background: rgba(241, 196, 15, 0.2); border: 2px solid var(--yellow); }
+        /* Positions ajustées pour le puzzle */
+        .top { top: 0; left: 200px; background: rgba(255, 77, 77, 0.15); border: 2px solid var(--red); }
+        .left { top: 175px; left: 0; background: rgba(52, 152, 219, 0.15); border: 2px solid var(--blue); }
+        .right { top: 175px; left: 400px; background: rgba(46, 204, 113, 0.15); border: 2px solid var(--green); }
+        .bottom { top: 350px; left: 200px; background: rgba(241, 196, 15, 0.15); border: 2px solid var(--yellow); }
 
+        /* Cercle central réduit */
         .center-hub {
-            position: absolute;
-            top: 280px;
-            left: 310px;
-            width: 180px;
-            height: 180px;
-            background: white;
-            border: 4px solid var(--dark);
-            border-radius: 50%;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            text-align: center;
-            color: var(--dark);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            position: absolute; top: 295px; left: 315px; width: 120px; height: 120px;
+            background: white; border: 3px solid var(--dark); border-radius: 50%;
+            z-index: 10; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; text-align: center; font-size: 0.8em; color: var(--dark);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
 
-        /* Champs de saisie */
-        h3 { font-size: 0.9em; margin: 5px 0; text-transform: uppercase; }
+        h3 { font-size: 0.85em; margin: 2px 0; color: var(--dark); }
+        .desc { font-size: 0.65em; font-weight: bold; margin-bottom: 5px; opacity: 0.8; }
+        
         textarea {
-            width: 100%;
-            height: 60px;
-            background: rgba(255,255,255,0.6);
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 5px;
-            font-size: 0.8em;
-            resize: none;
-            margin-top: 5px;
+            width: 100%; height: 50px; background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(0,0,0,0.1); border-radius: 4px;
+            font-size: 0.75em; resize: none; margin-top: 3px;
         }
 
-        /* Socle Bien-être */
         .base {
-            margin-top: 40px;
-            width: 800px;
-            background: #f1f1f1;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px dashed #999;
+            margin-top: 20px; width: 750px; background: #fff; padding: 15px;
+            border-radius: 8px; text-align: center; border: 2px solid #ddd;
         }
 
         .btn-export {
-            margin-top: 30px;
-            padding: 15px 40px;
-            background: var(--dark);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: bold;
+            margin-top: 20px; padding: 12px 30px; background: var(--dark);
+            color: white; border: none; border-radius: 20px; cursor: pointer;
+            font-weight: bold; transition: 0.3s;
         }
+        .btn-export:hover { background: #000; }
 
-        @media print {
-            .btn-export { display: none; }
-            textarea { border: none; background: transparent; }
-        }
+        @media print { .btn-export { display: none; } textarea { border: 1px solid #ccc; } }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>MON IKIGAI EMPLOI [cite: 9]</h1>
-    <p>LS4YOU EXERCICE </p>
+    <h1>IKIGAI EMPLOI</h1>
+    <p style="font-size: 0.8em;">Destination Moi-même - LS4YOU</p>
 </div>
 
 <div class="ikigai-container">
-    <div class="center-hub">DESTINATION<br>MOI-MÊME </div>
+    <div class="center-hub">DESTINATION<br>MOI-MÊME</div>
 
     <div class="circle top">
-        <h3>❤️ CE QUE J'AIME [cite: 16]</h3>
-        <p style="font-size: 0.7em;">Mon Unicité [cite: 15] | Objectifs personnels [cite: 18]</p>
-        <textarea placeholder="Ce qui me définit... [cite: 16]"></textarea>
-        <textarea placeholder="Connaissance de soi... [cite: 18]"></textarea>
+        <h3>❤️ MES ENVIE</h3>
+        <span class="desc">Sens & Unicité</span>
+        <textarea placeholder="Ce qui me définit..."></textarea>
+        <textarea placeholder="Mes objectifs..."></textarea>
     </div>
 
     <div class="circle left">
-        <h3>🛠️ MON POTENTIEL [cite: 10]</h3>
-        <p style="font-size: 0.7em;">Mes Talents [cite: 14] | Ma Personnalité [cite: 17]</p>
-        <textarea placeholder="Gestion du stress / Résilience [cite: 4]"></textarea>
-        <textarea placeholder="Compétences pour convaincre [cite: 20]"></textarea>
+        <h3>🛠️ MON POTENTIEL</h3>
+        <span class="desc">Talents & Forces</span>
+        <textarea placeholder="Ma personnalité..."></textarea>
+        <textarea placeholder="Mes atouts..."></textarea>
     </div>
 
     <div class="circle right">
-        <h3>💼 MES OPPORTUNITÉS [cite: 12]</h3>
-        <p style="font-size: 0.7em;">Ce qui me rend utile [cite: 3]</p>
-        <textarea placeholder="Ce qui me rend fort [cite: 3]"></textarea>
-        <textarea placeholder="Besoins concrets du marché..."></textarea>
+        <h3>💼 MON UTILITÉ</h3>
+        <span class="desc">Besoins du marché</span>
+        <textarea placeholder="Ce qui me rend fort..."></textarea>
+        <textarea placeholder="Opportunités..."></textarea>
     </div>
 
     <div class="circle bottom">
-        <h3>🌱 POURQUOI ÊTRE PAYÉ [cite: 6]</h3>
-        <p style="font-size: 0.7em;">Ce que je peux faire [cite: 6]</p>
-        <textarea placeholder="Quel salaire ? "></textarea>
-        <textarea placeholder="Quelles qualités & compétences ? "></textarea>
+        <h3>🌱 MES REVENUS</h3>
+        <span class="desc">Objectif Réaliste</span>
+        <textarea placeholder="Salaire visé ?"></textarea>
+        <textarea placeholder="Compétences payées ?"></textarea>
     </div>
 </div>
 
 <div class="base">
-    <strong>BIEN-ÊTRE PHYSIQUE ET MENTAL </strong><br>
-    <small>Mon équilibre de vie  | Ressources mentales et physiques </small>
-    <textarea style="height: 40px; margin-top: 10px;" placeholder="Mes actions pour tenir dans la durée..."></textarea>
+    <h3 style="margin-bottom: 5px;">💪 BIEN-ÊTRE ET ÉQUILIBRE</h3>
+    <span class="desc">Ma santé physique et mentale</span>
+    <textarea style="height: 35px;" placeholder="Actions pour mon équilibre de vie..."></textarea>
 </div>
 
-<button class="btn-export" onclick="window.print()">Exporter mon Ikigai en PDF</button>
+<button class="btn-export" onclick="window.print()">Exporter en PDF</button>
 
 </body>
 </html>
