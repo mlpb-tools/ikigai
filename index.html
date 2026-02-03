@@ -3,114 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ikigai Emploi - LS4YOU</title>
+    <title>Mon Ikigai Emploi - LS4YOU</title>
     <style>
-        :root {
-            --red: #ff4d4d; --blue: #3498db; --green: #2ecc71; --yellow: #f1c40f; --dark: #2c3e50;
-        }
-        body { font-family: 'Helvetica', sans-serif; background: #f9f9f9; display: flex; flex-direction: column; align-items: center; padding: 10px; }
-        .header { text-align: center; margin-bottom: 10px; }
-        h1 { margin: 0; color: var(--dark); font-size: 1.5em; text-transform: uppercase; }
+        :root { --red: #ff4d4d; --blue: #3498db; --green: #2ecc71; --yellow: #f1c40f; --dark: #2c3e50; }
+        body { font-family: sans-serif; background: #f4f4f4; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .header { text-align: center; margin-bottom: 20px; }
+        h1 { margin: 0; color: var(--dark); font-size: 1.5rem; text-transform: uppercase; }
         
-        .ikigai-container {
-            position: relative;
-            width: 750px;
-            height: 700px;
-            margin-top: 10px;
-        }
+        .ikigai-container { position: relative; width: 700px; height: 650px; margin-top: 10px; }
 
         .circle {
-            position: absolute; width: 350px; height: 350px; border-radius: 50%;
-            padding: 30px; display: flex; flex-direction: column; align-items: center;
+            position: absolute; width: 320px; height: 320px; border-radius: 50%;
+            padding: 25px; display: flex; flex-direction: column; align-items: center;
             justify-content: center; text-align: center; box-sizing: border-box;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        /* Positions ajustées pour le puzzle */
-        .top { top: 0; left: 200px; background: rgba(255, 77, 77, 0.15); border: 2px solid var(--red); }
-        .left { top: 175px; left: 0; background: rgba(52, 152, 219, 0.15); border: 2px solid var(--blue); }
-        .right { top: 175px; left: 400px; background: rgba(46, 204, 113, 0.15); border: 2px solid var(--green); }
-        .bottom { top: 350px; left: 200px; background: rgba(241, 196, 15, 0.15); border: 2px solid var(--yellow); }
+        .top { top: 0; left: 190px; background: rgba(255, 77, 77, 0.15); border: 2px solid var(--red); }
+        .left { top: 160px; left: 0; background: rgba(52, 152, 219, 0.15); border: 2px solid var(--blue); }
+        .right { top: 160px; left: 380px; background: rgba(46, 204, 113, 0.15); border: 2px solid var(--green); }
+        .bottom { top: 320px; left: 190px; background: rgba(241, 196, 15, 0.15); border: 2px solid var(--yellow); }
 
-        /* Cercle central réduit */
         .center-hub {
-            position: absolute; top: 295px; left: 315px; width: 120px; height: 120px;
-            background: white; border: 3px solid var(--dark); border-radius: 50%;
+            position: absolute; top: 290px; left: 320px; width: 60px; height: 60px;
+            background: white; border: 2px solid var(--dark); border-radius: 50%;
             z-index: 10; display: flex; align-items: center; justify-content: center;
-            font-weight: bold; text-align: center; font-size: 0.8em; color: var(--dark);
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            font-weight: bold; text-align: center; font-size: 0.7rem; color: var(--dark);
         }
 
-        h3 { font-size: 0.85em; margin: 2px 0; color: var(--dark); }
-        .desc { font-size: 0.65em; font-weight: bold; margin-bottom: 5px; opacity: 0.8; }
-        
+        h3 { font-size: 0.9rem; margin: 0; color: var(--dark); }
         textarea {
-            width: 100%; height: 50px; background: rgba(255,255,255,0.7);
-            border: 1px solid rgba(0,0,0,0.1); border-radius: 4px;
-            font-size: 0.75em; resize: none; margin-top: 3px;
+            width: 100%; height: 80px; background: white;
+            border: 1px solid #ccc; border-radius: 4px;
+            font-size: 0.8rem; resize: none; margin-top: 8px; padding: 5px;
         }
 
         .base {
-            margin-top: 20px; width: 750px; background: #fff; padding: 15px;
-            border-radius: 8px; text-align: center; border: 2px solid #ddd;
+            margin-top: 30px; width: 700px; background: #fff; padding: 15px;
+            border-radius: 8px; text-align: center; border: 1px solid #ccc;
         }
 
-        .btn-export {
+        .btn {
             margin-top: 20px; padding: 12px 30px; background: var(--dark);
-            color: white; border: none; border-radius: 20px; cursor: pointer;
-            font-weight: bold; transition: 0.3s;
+            color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;
         }
-        .btn-export:hover { background: #000; }
 
-        @media print { .btn-export { display: none; } textarea { border: 1px solid #ccc; } }
+        @media print { .btn { display: none; } body { background: white; } }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>IKIGAI EMPLOI</h1>
-    <p style="font-size: 0.8em;">Destination Moi-même - LS4YOU</p>
+    <h1>MON IKIGAI EMPLOI</h1>
+    <p>Destination Moi-même</p>
 </div>
 
 <div class="ikigai-container">
-    <div class="center-hub">DESTINATION<br>MOI-MÊME</div>
+    <div class="center-hub">MOI</div>
 
     <div class="circle top">
-        <h3>❤️ MES ENVIE</h3>
-        <span class="desc">Sens & Unicité</span>
-        <textarea placeholder="Ce qui me définit..."></textarea>
-        <textarea placeholder="Mes objectifs..."></textarea>
+        <h3>MES ENVIES</h3>
+        <textarea placeholder="Ce qui me définit et me passionne..."></textarea>
     </div>
 
     <div class="circle left">
-        <h3>🛠️ MON POTENTIEL</h3>
-        <span class="desc">Talents & Forces</span>
-        <textarea placeholder="Ma personnalité..."></textarea>
-        <textarea placeholder="Mes atouts..."></textarea>
+        <h3>MON POTENTIEL</h3>
+        <textarea placeholder="Mes talents et ma personnalité..."></textarea>
     </div>
 
     <div class="circle right">
-        <h3>💼 MON UTILITÉ</h3>
-        <span class="desc">Besoins du marché</span>
-        <textarea placeholder="Ce qui me rend fort..."></textarea>
-        <textarea placeholder="Opportunités..."></textarea>
+        <h3>MON UTILITÉ</h3>
+        <textarea placeholder="Les besoins du marché du travail..."></textarea>
     </div>
 
     <div class="circle bottom">
-        <h3>🌱 MES REVENUS</h3>
-        <span class="desc">Objectif Réaliste</span>
-        <textarea placeholder="Salaire visé ?"></textarea>
-        <textarea placeholder="Compétences payées ?"></textarea>
+        <h3>MES REVENUS</h3>
+        <textarea placeholder="Salaire et compétences payées..."></textarea>
     </div>
 </div>
 
 <div class="base">
-    <h3 style="margin-bottom: 5px;">💪 BIEN-ÊTRE ET ÉQUILIBRE</h3>
-    <span class="desc">Ma santé physique et mentale</span>
-    <textarea style="height: 35px;" placeholder="Actions pour mon équilibre de vie..."></textarea>
+    <h3>MON ÉQUILIBRE</h3>
+    <textarea style="height: 40px;" placeholder="Santé, sommeil, gestion du stress..."></textarea>
 </div>
 
-<button class="btn-export" onclick="window.print()">Exporter en PDF</button>
+<button class="btn" onclick="window.print()">Exporter en PDF</button>
 
 </body>
 </html>
